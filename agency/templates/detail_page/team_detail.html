@@ -1,0 +1,92 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block header %}
+	{% include 'header.html' %}
+{% endblock header %}
+
+{% block content %}
+<header class="header-page-bg overlay-shape">
+    <div class="header-bottom-shape"></div>
+    <div class="container">
+        <div class="header-page-content"> <small class="line-shape-bg color-white">Команда</small>
+            <h1 class="color-white"> 
+                {{team.title}}
+            </h1>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item">
+                        <a href="{% url 'home' %}">Главная</a>
+                    </li>
+                    <li class="breadcrumb-item active" aria-current="page">
+                        Команда
+                    </li>
+                    <li class="breadcrumb-item active" aria-current="page">
+                        {{team.title}}
+                    </li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+</header>
+
+
+<section class="team-details-section pt-100 pb-70">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 col-md-12 col-lg-5 pb-30">
+                <div class="team-details-thumb text-center">
+                    <img src="{{team.image.url}}" alt="member">
+                </div>
+            </div>
+            <div class="col-sm-12 col-md-12 col-lg-7 pb-30">
+                <div class="team-details-caption-box around-border">
+                    <div class="team-details-caption-info">
+                        <h3>{{team.title}}</h3>
+                        <h4>{{team.position}}</h4>
+                    </div>
+                    <ul class="team-details-caption-list">
+                        <li>
+                            <span>Возраст:</span>{{team.age}} 
+                        </li>
+                        <li>
+                            <span>Департамент:</span>{{team.department}} 
+                        </li>
+                        <li>
+                            <span>Стаж:</span>{{team.experience}} 
+                        </li>
+                        <li>
+                            <span>Телефон:</span><a href="tel:{{team.phone}}">{{team.phone}} </a>
+                        </li>
+                        <li>
+                            <span>E-mail:</span><a href="mailto:{{team.email}}">{{team.email}}</a>
+                        </li>
+                        <li>
+                            <span>Адрес:</span>{{team.address}}
+                        </li>
+                        <li>
+                            <span>Follow On:</span>
+                            <ul class="social-list">
+                                <li><a href="#"><i class="flaticon-facebook-1"></i></a></li>
+                                <li><a href="#"><i class="flaticon-twitter"></i></a></li>
+                                <li><a href="#"><i class="flaticon-linkedin"></i></a></li>
+                                <li><a href="#"><i class="flaticon-youtube"></i></a></li>
+                                <li><a href="#"><i class="flaticon-instagram"></i></a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="team-biograpy mb-30">
+            <div class="team-biograpy-item team-biograpy-item-title">
+                <h3>Биография</h3>
+            </div>
+            <div class="team-biograpy-item team-biograpy-item-para">
+                <p>{{team.description|safe}}</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock content %}

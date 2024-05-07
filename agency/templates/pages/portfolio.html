@@ -1,0 +1,102 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block header %}
+	{% include 'header.html' %}
+{% endblock header %}
+
+
+{% block content %}
+<header class="header-page-bg overlay-shape">
+    <div class="header-bottom-shape"></div>
+    <div class="container">
+        <div class="header-page-content"> <small class="line-shape-bg color-white">немного о наших работах</small>
+            <h1 class="color-white"> 
+                Портфолио
+            </h1>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item">
+                        <a href="{% url 'home' %}">Главная</a>
+                    </li>
+                    <li class="breadcrumb-item active" aria-current="page">
+                        Портфолио
+                    </li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+</header>
+
+<section class="blog-section pt-100 pb-70">
+	<div class="container">
+	<div class="blog-carousel default-carousel owl-carousel owl-theme">
+		
+		{% for port in portfolio %}
+		<div class="item">
+			<div class="blog-card blog-card-dark">
+				<div class="blog-card-thumb">
+					<img src="{{port.image.url}}" alt="{{port.title}}">
+				</div>
+				<div class="blog-card-content">
+					<small>web development</small>
+					<h3>{{port.title}}</h3>
+					<a href="{{port.link}}" class="btn">перейти к проекту 
+						<i class="flaticon-right-arrow-2"></i>
+					</a>
+				</div>
+			</div>
+		</div>
+		{% endfor %}
+		
+	</div>
+	<div class="row mt-50">
+		<div class="col-12 col-md-6 col-lg-8 pb-30">
+			<div class="sidebar-item mb-30">
+				<div class="sidebar-title">
+				<h3>Recent Posts</h3>
+				</div>
+				<div class="blog-recent-content">
+				
+				{% for new in news %}
+				<div class="blog-recent-content-item">
+					<div class="blog-recent-content-image">
+						<a href="blog-details.html">
+						<img src="{{new.image.url}}" alt="recent">
+						</a>
+					</div>
+					<div class="blog-recent-content-details">
+						<h3><a href="blog-details.html">{{new.title}}</a>
+						</h3>
+						<ul class="blog-entry-holder">
+							<li class="blog-holder-date">{{new.date}}</li>
+						</ul>
+					</div>
+				</div>
+				{% endfor %}
+				</div>
+			</div>
+		</div>
+		<div class="col-12 col-md-6 col-lg-4 offset-md-3 offset-lg-0 pb-30">
+			<div class="sidebar-item">
+				<div class="sidebar-title">
+				<h3>Categories</h3>
+				</div>
+				<div class="sidebar-content">
+				<ul class="sidebar-category">
+					<li><a href="#"> Ransomware <span>(22)</span> </a></li>
+					<li><a href="#"> Global news <span>(80)</span> </a></li>
+					<li><a href="#"> Blockchain <span>(56)</span> </a></li>
+					<li><a href="#"> Cybercrime <span>(12)</span> </a></li>
+					<li><a href="#"> Whitepapers <span>(45)</span> </a></li>
+				</ul>
+				</div>
+			</div>
+		</div>
+	</div>
+	</div>
+</section>
+      
+	
+{% endblock content %}

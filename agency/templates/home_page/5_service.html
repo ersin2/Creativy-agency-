@@ -1,0 +1,27 @@
+<section class="service-section p-tb-100">
+    <div class="container">
+        <div class="section-title section-title-lg"> <small>Наши услуги</small>
+            <h2>Решения и технологии для расширения <span>Вашего бизнеса</span></h2> </div>
+        <div class="service-item-grid d-flex flex-wrap">
+            
+            {% for ser in services %}
+            <div class="service-item-list service-box-two">
+                <div class="service-box-icon"> 
+                    <img src="{{ser.image.url}}" alt="">
+                </div>
+                <div class="service-box-text">
+                    <h3>{{ser.title}}</h3>
+                    <p>{{ser.description|truncatewords:15|safe}}</p>
+                    <p>
+                        <a href="service/{{ser.id}}/{{ser.slug}}" class="redirect-link">
+                            Читать дальше 
+                            <i class="flaticon-right-arrow-2"></i>
+                        </a>
+                    </p>
+                </div>
+            </div>
+            {% endfor %}
+
+        </div>
+    </div>
+</section>

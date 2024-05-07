@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block header %}
+	{% include 'header.html' %}
+{% endblock header %}
+
+{% block content %}
+<header class="header-page-bg overlay-shape">
+    <div class="header-bottom-shape"></div>
+    <div class="container">
+        <div class="header-page-content"> <small class="line-shape-bg color-white">услуги</small>
+            <h1 class="color-white"> 
+                {{service.title}}
+            </h1>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item">
+                        <a href="{% url 'home' %}">Главная</a>
+                    </li>
+                    <li class="breadcrumb-item active" aria-current="page">
+                        Услуги
+                    </li>
+                    <li class="breadcrumb-item active" aria-current="page">
+                        {{service.title}}
+                    </li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+</header>
+
+<div class="service-details-section pt-100 pb-70">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-md-8 col-lg-8">
+                <div class="service-details-item">
+                    <div class="service-details-thumb">
+                        <img src="assets/images/service-details.jpg" alt="">
+                    </div>
+                    <div class="service-details-content">
+                        <h3>{{service.title}}</h3>
+                        <p>{{service.description|safe}}</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-12 col-md-8 col-lg-4 pb-30">
+                <div class="sidebar-item mb-30">
+                    <div class="sidebar-search">
+                        <form>
+                            <div class="form-group">
+                                <input type="email" class="form-control" placeholder="Search...">
+                                <button class="btn"><i class="flaticon-search"></i></button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="sidebar-item mb-30">
+                    <div class="sidebar-title">
+                        <h3>Categories</h3>
+                    </div>
+                    <div class="sidebar-content">
+                        <ul class="sidebar-category">
+                            <li><a href="#"> Ransomware <span>(22)</span> </a></li>
+                            <li><a href="#"> Global news <span>(80)</span> </a></li>
+                            <li><a href="#"> Blockchain <span>(56)</span> </a></li>
+                            <li><a href="#"> Cybercrime <span>(12)</span> </a></li>
+                            <li><a href="#"> Whitepapers <span>(45)</span> </a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="sidebar-item">
+                    <div class="sidebar-title">
+                        <h3>Tags</h3>
+                    </div>
+                    <div class="sidebar-content">
+                        <ul class="sidebar-tag">
+                            <li><a href="#"><i class="flaticon-tag"></i> Cyber Security (3) </a></li>
+                            <li><a href="#"><i class="flaticon-tag"></i> Blockchain (6) </a></li>
+                            <li><a href="#"><i class="flaticon-tag"></i> Virtual Assistant (3) </a></li>
+                            <li><a href="#"><i class="flaticon-tag"></i> Whitepapers (2) </a></li>
+                            <li><a href="#"><i class="flaticon-tag"></i> Trend In Design (54) </a></li>
+                            <li><a href="#"><i class="flaticon-tag"></i> Digital Learning Inc (23) </a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

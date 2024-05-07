@@ -1,0 +1,47 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block header %}
+	{% include 'header.html' %}
+{% endblock header %}
+
+
+{% block content %}
+<header class="header-page-bg overlay-shape">
+    <div class="header-bottom-shape"></div>
+    <div class="container">
+        <div class="header-page-content"> <small class="line-shape-bg color-white">немного истории о нас</small>
+            <h1 class="color-white"> 
+                О нас
+            </h1>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item">
+                        <a href="{% url 'home' %}">Главная</a>
+                    </li>
+                    <li class="breadcrumb-item active" aria-current="page">
+                        О нас
+                    </li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+</header>
+<section class="about-section pt-100 pb-70">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-sm-12 col-lg-12">
+                <div class="mx-auto ms-lg-auto me-lg-0">
+                    <div class="about-item-text">
+                        <div class="section-title text-start"> <small>О компании</small>
+                            <p>{{setting.about_page|safe}}</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+	
+{% endblock content %}

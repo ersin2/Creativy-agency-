@@ -1,0 +1,25 @@
+<section class="pricing-section pt-100 pb-70 bg-off-white">
+    <div class="container">
+        <div class="section-title section-title-lg"> <small>наши цены</small>
+            <h2> Различные типы <span>тарифных планов</span></h2> </div>
+        <div class="row">
+            
+            {% for price in prices %}
+            <div class="col-12 col-md-6 col-lg-4 pb-30">
+                <div class="pricing-item text-center">
+                    <div class="pricing-item-inner">
+                        <h3>{{price.title}}</h3>
+                        <div class="pricing-info">
+                            <h4 class="pricing-info-title"><span>{{price.price}}</span></h4> </div>
+                        <ul class="pricing-list">
+                            <li>{{price.description|safe}}</li>
+                        </ul>
+                        <div class="pricing-button"> <a href="#" class="btn btn-border">Купить сейчас</a> </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+
+        </div>
+    </div>
+</section>

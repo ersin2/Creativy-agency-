@@ -1,0 +1,30 @@
+<section class="team-section p-tb-100">
+    <div class="container">
+        <div class="section-title section-title-lg"> <small>наши команда</small>
+            <h2>Члены Нашей Профессиональной  <span> Команды Помогут Аам</span></h2> </div>
+        <div class="team-carousel default-carousel owl-carousel owl-theme">
+            
+            {% for tea in teams %}
+            <div class="item">
+                <div class="team-card team-card-two">
+                    <div class="team-card-image"> <img src="{{tea.image.url}}" alt="member"> </div>
+                    <div class="team-card-content">
+                        <h3><a href="team/{{tea.id}}/{{tea.slug}}">{{tea.title}}</a></h3>
+                        <h4>{{tea.position}}</h4>
+                        <ul class="social-list">
+                            
+                            {% for icon_sm in social_media %}
+                            <li class="{{icon_sm.icon_socmedia}}-bg">
+                                <a href="{{icon_sm.link}}"><i class="fab fa-{{icon_sm.icon_socmedia}}"></i></a>
+                            </li>
+                            {% endfor %} 
+                            
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+
+        </div>
+    </div>
+</section>
